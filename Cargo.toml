@@ -1,0 +1,80 @@
+[package]
+name = "patching_wwlp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tfhe = { version = "0.5.3", features = ["boolean", "shortint", "x86_64-unix"] }
+rand = { version = "*" }
+aligned-vec = { version = "0.5.0" }
+dyn-stack = { version = "0.9" }
+aes = { version = "*" }
+rayon = { version = "*", optional = true }
+pulp = "0.18.8"
+lazy_static = "1.4"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[test]]
+name = "glwe_keyswitch"
+harness = false
+
+[[test]]
+name = "scheme_switching"
+harness = false
+
+[[test]]
+name = "lwe_to_glwe"
+harness = false
+
+[[test]]
+name = "lwe_to_glwe_with_dim_switch"
+harness = false
+
+[[test]]
+name = "lwe_ks_by_glwe_ds"
+harness = false
+
+[[test]]
+name = "aes_ref"
+harness = false
+
+[[test]]
+name = "aes_eval"
+harness = false
+
+[[test]]
+name = "sample_lwe_to_glwe_err"
+harness = false
+
+[[test]]
+name = "sample_ggsw_conv_err"
+harness = false
+
+[[test]]
+name = "sample_cbs_err"
+harness = false
+
+[[test]]
+name = "sample_aes_eval_err"
+harness = false
+
+[[bench]]
+name = "bench_lwe_to_glwe"
+harness = false
+
+[[bench]]
+name = "bench_cbs"
+harness = false
+
+[[bench]]
+name = "bench_aes"
+harness = false
+
+[features]
+default = ["monothread"]
+monothread = []
+multithread = ["rayon"]
