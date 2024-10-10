@@ -1,5 +1,6 @@
 # Patching and Extending the WWL+ Circuit Bootstrapping Method to FFT Domains
-This is an implementation of ['Patching and Extending the WWL+ Circuit Bootstrapping Method to FFT Domains'](https://eprint.iacr.org/2024/1318).
+This is an implementation of ['Patching and Extending the WWL+ Circuit Bootstrapping Method to FFT Domains'](https://eprint.iacr.org/archive/2024/1318/20240902:055949).
+
 
 ## Contents
 We implement:
